@@ -14,6 +14,11 @@ if (hasSymptoms==='Yes'){
 else if (hasSymptoms==='No'){
     res.redirect('/ineligible')
 }
+
+else if (hasSymptoms==="I don't know"){
+    res.redirect('/ineligible')
+}
+
 else {res.redirect('/magical-powers')
 
 } 
