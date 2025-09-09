@@ -43,6 +43,23 @@
                 }
               ]
             }
+          },
+                    {
+            key: {
+              text: "Extra symptoms"
+            },
+            value: {
+              html: data.extraSymptoms | join("<br>")
+            },
+            actions: {
+              items: [
+                {
+                  href: "/select-symptoms",
+                  text: "Change",
+                  visuallyHiddenText: "extra symptoms"
+                }
+              ]
+            }
           }
         ]
       }) }}

@@ -1,0 +1,58 @@
+{% extends "layout.html" %}
+
+{% from 'back-link/macro.njk' import backLink %}
+{% from 'button/macro.njk' import button %}
+{% from 'radios/macro.njk' import radios %}
+
+{% set mainClasses = "nhsuk-main-wrapper--s" %}
+
+{% block beforeContent %}
+  {{ backLink({
+    href: "/magical-powers",
+    text: "Back"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+      <form action="/check-your-answers" method="post" novalidate>
+
+  {{ checkboxes({
+    idPrefix: "extraSymptoms",
+    name: "extraSymptoms",
+    fieldset: {
+      legend: {
+        text: "Which of the following symptoms do you have?",
+        classes: "nhsuk-fieldset__legend--l",
+        isPageHeading: true
+      }
+    },
+    hint: {
+      text: "Select all options that are relevant to you"
+    },
+    values: data.extraSymptoms,
+    items: [
+      {
+        value: "Flying",
+        text: "Flying"
+      },
+      {
+        value: "Dizziness",
+        text: "Dizziness"
+      },
+      {
+        value: "Voices",
+        text: "Voices"
+      }
+    ]
+  }) }}
+
+        {{ button({
+          text: "Continue"
+        }) }}
+
+      </form>
+    </div>
+  </div>
+{% endblock %}
