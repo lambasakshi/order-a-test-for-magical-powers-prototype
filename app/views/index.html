@@ -30,8 +30,6 @@
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-two-thirds">
 
-      <p>hello</p>
-
       <!-- Add your content here -->
       <!-- Styles and components can be found at https://service-manual.nhs.uk/design-system -->
 
@@ -39,6 +37,12 @@
         {{ serviceName }}
       </h1>
 
+    <p>New service to help you order magic kit if you have magical power</p>
+
+    {{ button({
+        text: "Check if you're eligible",
+        href: "/start-page"
+      }) }}
       
     </div>
   </div>
